@@ -1,22 +1,50 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 
+@media only screen and (max-width: 600px) {
+  /* Styles for devices with a screen width of 600px or less */
+  body {
+    font-size: 16px;
+  }
+}
+
 body {
+  padding: 50px;
   background-image: url("images/quran.jpg");
+}
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: #f7f7f7;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#hadis-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif;
+}
+
+#hadis-text i {
+  margin-right: 10px;
 }
 
 #result {
-  font-family: "Font Awesome 5 Free";
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  font-family: "FontAwesome", sans-serif;
+  font-size: 3rem;
   color: white;
+  margin: auto;
+  padding: 60px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), #333;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
 }
 
 #fetch-button {
@@ -48,8 +76,32 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
   z-index: 9999;
+}
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 600px) {
+  #hadis-text {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #fetch-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  #loader {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+
+  #result {
+    font-size: 20px;
+    margin-top: 10px;
+  }
 }
 
 @keyframes spin {

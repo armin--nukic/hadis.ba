@@ -19,7 +19,7 @@ fetchButton.addEventListener("click", () => {
       const randomIndex = Math.floor(Math.random() * data.length);
       const randomHadis = data[randomIndex].name;
       const randomAuthor = data[randomIndex].author;
-      resultDiv.textContent = `Hadis: ${randomHadis} - Autor: ${randomAuthor}`;
+      resultDiv.textContent = ` ${randomHadis} - Autor:   ${randomAuthor}`;
     })
     .catch((error) => {
       // Hide the loader
