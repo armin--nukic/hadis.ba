@@ -1,3 +1,5 @@
+//============== Code and api by Armin ========================= -->
+
 const fetchButton = document.getElementById("fetch-button");
 const resultDiv = document.getElementById("result");
 const loader = document.getElementById("loader");
