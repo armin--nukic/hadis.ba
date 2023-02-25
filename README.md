@@ -44,13 +44,14 @@ Nadalje, postoji nekoliko funkcija koje omogućuju dijeljenje hadisa putem razli
 
 Ovaj kod koristi moderne JavaScript tehnologije poput fetch API-a, Web Speech API-a i native share API-ja kako bi korisnicima omogućio jednostavno i intuitivno korištenje web stranice s hadisima.
 
+Četvrta funkcija, "dugmeKopiraj", omogućuje kopiranje teksta hadisa i autora u međuspremnik računala.
+
 
 
 # API
 
 ---------------------------------------------------------------------------------------------
 
-Četvrta funkcija, "dugmeKopiraj", omogućuje kopiranje teksta hadisa i autora u međuspremnik računala.
 
 API koji se koristi je MongoDB API i on pruža mogućnost pristupa MongoDB bazi podataka putem HTTP zahtjeva. U ovom slučaju, endpoint na koji se šalju zahtjevi je https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi. Ovaj endpoint omogućava pristup kolekciji hadisa koja je već postavljena u bazi 
 podataka.
