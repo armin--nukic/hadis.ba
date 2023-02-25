@@ -1,4 +1,4 @@
-# novihadis.com
+# novihadis.com -- http://novihadis.com/
 
 Svaki dan nauči novi hadis
 -----------------------------------------------
