@@ -38,22 +38,22 @@ h1 {
 .glavna-sekcija .content {
   margin: 35px 0;
 }
-.content .quote-area {
+.content .hadis-area {
   display: flex;
   justify-content: center;
 }
-.quote-area i {
+.hadis-area i {
   font-size: 15px;
 }
-.quote-area i:first-child {
+.hadis-area i:first-child {
   margin: 3px 10px 0 0;
 }
-.quote-area i:last-child {
+.hadis-area i:last-child {
   display: flex;
   align-items: center;
   margin: 0 0 3px 10px;
 }
-.quote-area .quote {
+.hadis-area .hadis-paragraf {
   font-size: 22px;
   text-align: center;
 }

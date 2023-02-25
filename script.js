@@ -1,15 +1,16 @@
 // Done by Armin
 
-const HadisTekst = document.querySelector(".quote");
-dugmeDodaj = document.querySelector("button");
-authorName = document.querySelector(".author .name");
-dugmeZvuk = document.querySelector(".sound");
-dugmeKopiraj = document.querySelector(".copy");
-dugmePodijeli = document.querySelector(".share");
+const HadisTekst = document.querySelector(".hadis-paragraf");
+const dugmeDodaj = document.querySelector("button");
+const authorName = document.querySelector(".author .name");
+const dugmeZvuk = document.querySelector(".sound");
+const dugmeKopiraj = document.querySelector(".copy");
+const dugmePodijeli = document.querySelector(".share");
 
 function randomNoviHadis() {
   dugmeDodaj.classList.add("loading");
   dugmeDodaj.innerHTML = "Loading...";
+  // api url
   fetch(
     "https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi"
   )
@@ -31,7 +32,8 @@ function randomNoviHadis() {
 
 dugmeDodaj.addEventListener("click", randomNoviHadis);
 
-// dugme podijeli (Dijeli na drustvene mreze fb, insta)
+// Share dugme
+
 dugmePodijeli.addEventListener("click", (event) => {
   // To check if browser support native share api
   if (navigator.share) {
@@ -51,7 +53,7 @@ dugmePodijeli.addEventListener("click", (event) => {
   }
 });
 
-// zvuk
+// Zvuk postavljen na bosanski jezik bs-ba
 
 dugmeZvuk.addEventListener("click", () => {
   const textToSpeak = `${HadisTekst.innerText}. : ${authorName.innerText}`;
