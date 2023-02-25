@@ -13,8 +13,18 @@ The code also includes functions for sharing the hadith on various social media 
 # API
 -------------------------------------------------
 
+The MongoDB API service is used to fetch a random hadith from a MongoDB database hosted on AWS (Amazon Web Services). The database contains a collection of hadiths, each with its own "name" and "author" fields. The API endpoint "https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi" is used to retrieve the data from the MongoDB database in JSON format.
 
+To add new hadiths to the database, you would need to use the POST method and send a raw JSON object in the body of the request to the same URL "https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi". The JSON object should contain the "name" and "author" fields, which will be used to create a new hadith document in the database.
 
+You can add new hadiths and author of it using Postman, Jmeter or any other Api testing tool using POST method and raw json format like this
+
+POST https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadis
+
+{
+"name": "Allah kaže: Covjece, dijeli pa cu i Ja tebi udijeliti!",
+"author": "Buharija i Muslim"
+}
 
 
 # Na našem jeziku
@@ -50,6 +60,8 @@ Ovaj servis se koristi za pristup i manipulaciju podacima u MongoDB bazi podatak
 Ukoliko želite dodati novi hadis u ovu bazu, potrebno je koristiti HTTP POST metodu na sljedećem URL-u: https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi.
 
 U body dijelu zahtjeva, trebate poslati JSON objekat sa informacijama o novom hadisu. Primjer JSON objekta bi mogao izgledati ovako:
+
+POST https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadis
 
 {
 "name": "Allah kaže: Covjece, dijeli pa cu i Ja tebi udijeliti!",
