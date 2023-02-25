@@ -1,3 +1,5 @@
+// Done by Armin
+
 const HadisTekst = document.querySelector(".quote");
 dugmeDodaj = document.querySelector("button");
 authorName = document.querySelector(".author .name");
