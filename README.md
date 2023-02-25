@@ -9,7 +9,39 @@ The code also includes event listeners that trigger functions when the user clic
 The code also includes functions for sharing the hadith on various social media platforms, including Instagram, Facebook, Twitter, Messenger, and email. These functions use the navigator.share() method to allow the user to share the hadith text and a link to the page.
 
 
-Na našem jeziku
+#API
+
+
+
+
+
+
+#Na našem jeziku
+
+#API
+
+API koji se koristi je MongoDB API i on pruža mogućnost pristupa MongoDB bazi podataka putem HTTP zahtjeva. U ovom slučaju, endpoint na koji se šalju zahtjevi je https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi. Ovaj endpoint omogućava pristup kolekciji hadisa koja je već postavljena u bazi 
+podataka.
+
+Ovaj servis se koristi za pristup i manipulaciju podacima u MongoDB bazi podataka. Konkretno, ovaj servis omogućava pristup podacima vezanim za hadise.
+
+Ukoliko želite dodati novi hadis u ovu bazu, potrebno je koristiti HTTP POST metodu na sljedećem URL-u: https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi.
+
+U body dijelu zahtjeva, trebate poslati JSON objekat sa informacijama o novom hadisu. Primjer JSON objekta bi mogao izgledati ovako:
+
+{
+"name": "Allah kaže: Covjece, dijeli pa cu i Ja tebi udijeliti!",
+"author": "Buharija i Muslim"
+}
+
+U ovom primjeru, atribut "name" sadrži tekst hadisa, dok atribut "author" sadrži ime autora koji je hadis prenio. Ovi atributi se mogu prilagoditi vašim potrebama i formatu podataka u bazi.
+
+Nakon što pošaljete POST zahtjev, server će dodati novi hadis u bazu podataka, i odgovoriti sa odgovarajućim HTTP status kodom.
+
+
+
+
+
 
 
 Ovaj kod je napisan na JavaScript-u i sastoji se od funkcija koje omogućuju prikazivanje i dijeljenje različitih hadisa, kao i reprodukciju zvuka govora tih hadisa.
