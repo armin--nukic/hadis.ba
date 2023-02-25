@@ -1,34 +1,126 @@
-//============== Code and api by Armin ========================= -->
+const HadisTekst = document.querySelector(".quote");
+dugmeDodaj = document.querySelector("button");
+authorName = document.querySelector(".author .name");
+dugmeZvuk = document.querySelector(".sound");
+dugmeKopiraj = document.querySelector(".copy");
+dugmePodijeli = document.querySelector(".share");
 
-const fetchButton = document.getElementById("fetch-button");
-const resultDiv = document.getElementById("result");
-const loader = document.getElementById("loader");
-
-fetchButton.addEventListener("click", () => {
-  // Show the loader
-  loader.style.display = "block";
-  // Hide the result
-  result.style.display = "none";
+function randomNoviHadis() {
+  dugmeDodaj.classList.add("loading");
+  dugmeDodaj.innerHTML = "Loading...";
   fetch(
     "https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi"
   )
-    .then((response) => response.json())
+    .then((res) => res.json())
     .then((data) => {
-      // Hide the loader
-      loader.style.display = "none";
-      // Show the result
-      result.style.display = "block";
+      console.log(data);
       const randomIndex = Math.floor(Math.random() * data.length);
       const randomHadis = data[randomIndex].name;
       const randomAuthor = data[randomIndex].author;
-      resultDiv.textContent = ` ${randomHadis} - Autor:   ${randomAuthor}`;
-    })
-    .catch((error) => {
-      // Hide the loader
-      loader.style.display = "none";
-      // Show an error message
-      result.style.display = "block";
-      result.innerHTML = "Error fetching data.";
-      console.error("Error fetching data:", error);
+      console.log(randomHadis);
+      console.log(randomAuthor);
+
+      HadisTekst.innerText = randomHadis;
+      authorName.innerText = randomAuthor;
+      dugmeDodaj.innerText = "Novi Hadis";
+      dugmeDodaj.classList.remove("loading");
     });
+}
+
+dugmeDodaj.addEventListener("click", randomNoviHadis);
+
+// dugme podijeli (Dijeli na drustvene mreze fb, insta)
+dugmePodijeli.addEventListener("click", (event) => {
+  // To check if browser support native share api
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Hadis dana",
+        text: HadisTekst.innerText + "--" + authorName.innerText,
+      })
+      .then(() => console.log("successful share"))
+      .catch((error) => console.log("Error sharing", error));
+  }
+  // fallback
+  else {
+    alert(
+      "The current Browser does not support the share function. please, share link manually"
+    );
+  }
 });
+
+// zvuk
+
+dugmeZvuk.addEventListener("click", () => {
+  const textToSpeak = `${HadisTekst.innerText}. : ${authorName.innerText}`;
+  const zvuk = new SpeechSynthesisUtterance(textToSpeak);
+  zvuk.lang = "bs-BA"; // Set the language to Bosnian (Bosnia and Herzegovina)
+  zvuk.pitch = 1.5; // Set the pitch to 1.5 for more natural intonation
+  zvuk.rate = 0.8; // Set the rate to 0.8 for a slightly slower, more natural pace
+  zvuk.volume = 1.0; // Set the volume to 1.0
+  speechSynthesis.speak(zvuk);
+});
+
+// kopiranje
+
+dugmeKopiraj.addEventListener("click", () => {
+  navigator.clipboard.writeText(
+    HadisTekst.innerText + " __ " + authorName.innerText
+  );
+
+  alert("Hadis je kopiran u clipboard");
+});
+
+// Get the buttons
+const instagramButton = document.getElementById("instagram-share");
+const facebookButton = document.getElementById("facebook-share");
+const twitterButton = document.getElementById("twitter-share");
+const messengerButton = document.getElementById("messenger-share");
+const emailButton = document.getElementById("email-share");
+
+// Function to share on Instagram
+function shareOnInstagram() {
+  navigator.share({
+    text: HadisTekst.innerText + " -- " + authorName.innerText,
+    url: "https://novihadis.com",
+  });
+}
+
+// Function to share on Facebook
+function shareOnFacebook() {
+  navigator.share({
+    text: HadisTekst.innerText + " -- " + authorName.innerText,
+    url: "https://novihadis.com",
+  });
+}
+
+// Function to share on Twitter
+function shareOnTwitter() {
+  navigator.share({
+    text: HadisTekst.innerText + " -- " + authorName.innerText,
+    url: "https://novihadis.com",
+  });
+}
+
+// Function to share on Messenger
+function shareOnMessenger() {
+  navigator.share({
+    text: HadisTekst.innerText + " -- " + authorName.innerText,
+    url: "https://novihadis.com",
+  });
+}
+
+// Function to share via Email
+function shareViaEmail() {
+  navigator.share({
+    subject: "Hadis dana",
+    text: HadisTekst.innerText + " -- " + authorName.innerText,
+  });
+}
+
+// Add event listeners to the buttons
+instagramButton.addEventListener("click", shareOnInstagram);
+facebookButton.addEventListener("click", shareOnFacebook);
+twitterButton.addEventListener("click", shareOnTwitter);
+messengerButton.addEventListener("click", shareOnMessenger);
+emailButton.addEventListener("click", shareViaEmail);

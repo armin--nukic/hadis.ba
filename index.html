@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <!-- =================== Done by Armin ============================ -->
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link
-        rel="shortcut icon"
-        href="/images/favicon.ico"
-        type="image/x-icon"
-      />
-      <meta name="description" content="Svaki dan novi hadis" />
+<html lang="en">
+  <head>
+    <!-- =================== Done by Armin ============================ -->
 
-      <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-QX9FDIe+oB89SRf+55d5y5x5jj5pJz5j5PG1FZ+X8ZvFq0YVtSdPmuW4V8zv4tEMhlV7Stu4OeeR9ZDIXufJFQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-      <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <meta
+      name="description"
+      content="Svaki dan novi hadis. Nauci novi hadis. Podijeli novi hadis. "
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Novi hadis</title>
+  </head>
 
-      <title>Novi hadis svaki dan</title>
-    </head>
-    <body>
-      <div>
-        <h1 id="hadis-text"><i class="fas fa-book"></i> Novi hadis</h1>
-        <button id="fetch-button" class="btn btn-primary">
-          <i class="fas fa-sync-alt"></i>
-          Vidi Novi Hadis
-        </button>
-        <div id="loader"></div>
-        <div id="result">Prikaži novi hadis</div>
+  <body>
+    <div class="glavna-sekcija">
+      <img class="logo" src="images/logo.png" alt="Logo" />
+      <header>Novi hadis</header>
+      <div class="content">
+        <div class="quote-area">
+          <i class="fas fa-quote-left"></i>
+          <p class="quote">Prikaži novi hadis</p>
+          <i class="fas fa-quote-right"></i>
+        </div>
+        <div class="author">
+          <span>__</span>
+          <span class="name"> Autor </span>
+        </div>
       </div>
+      <div class="buttons">
+        <div class="fičuri">
+          <ul>
+            <li class="sound"><i class="fas fa-volume-up"></i></li>
+            <li class="copy"><i class="fas fa-copy"></i></li>
+            <li class="share"><i class="fas fa-share-nodes"></i></li>
+          </ul>
+          <button>Vidi novi hadis</button>
+        </div>
+      </div>
+      <div class="share-icons">
+        <div>
+          <p>
+            Zaradi sevap - podijeli objavu ili kopiraj drugima kako bi se i
+            drugi okoristili!
+          </p>
+        </div>
 
-      <script defer src="script.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-  </html>
+        <a id="instagram-share" href="#"><i class="fab fa-instagram"></i></a>
+        <a id="facebook-share" href="#"><i class="fab fa-facebook"></i></a>
+        <a id="twitter-share" href="#"><i class="fab fa-twitter"></i></a>
+        <a id="messenger-share" href="#"
+          ><i class="fab fa-facebook-messenger"></i
+        ></a>
+        <a id="email-share" href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
