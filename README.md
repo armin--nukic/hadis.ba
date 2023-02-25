@@ -1,7 +1,7 @@
 # novihadis.com
 -----------------------------------------------
 
-This code appears to be a JavaScript code that controls a web page that displays and shares Islamic hadiths. It contains functions that allow the user to generate a random hadith, share it on social media platforms, listen to the hadith using text-to-speech, and copy the hadith to the clipboard.
+This code appears to be a JavaScript (Vanilla) code that controls a web page that displays and shares Islamic hadiths. It contains functions that allow the user to generate a random hadith, share it on social media platforms, listen to the hadith using text-to-speech, and copy the hadith to the clipboard.
 
 The code uses the fetch() method to retrieve data from an external API that provides a collection of hadiths. The code then selects a random hadith from the data returned by the API and displays it on the web page.
 
@@ -31,7 +31,7 @@ POST https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint
 
 ---------------------------------------------------
 
-Ovaj kod je napisan na JavaScript-u i sastoji se od funkcija koje omogućuju prikazivanje i dijeljenje različitih hadisa, kao i reprodukciju zvuka govora tih hadisa.
+Ovaj kod je napisan na JavaScript-u (Vanilla) i sastoji se od funkcija koje omogućuju prikazivanje i dijeljenje različitih hadisa, kao i reprodukciju zvuka govora tih hadisa.
 
 Prva funkcija, "randomNoviHadis", služi za generiranje novog hadisa putem API-ja, a taj se hadis zatim prikazuje u odgovarajućem HTML elementu. Funkcija također mijenja tekst na gumbu "dugmeDodaj" iz "Loading..." u "Novi Hadis" nakon što je hadis uspješno dohvaćen.
 
