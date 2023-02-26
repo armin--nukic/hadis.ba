@@ -25,6 +25,7 @@ function randomNoviHadis() {
 
       HadisTekst.innerText = randomHadis;
       authorName.innerText = randomAuthor;
+
       dugmeDodaj.innerText = "Novi Hadis";
       dugmeDodaj.classList.remove("loading");
     });
