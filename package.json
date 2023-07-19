@@ -1,0 +1,23 @@
+{
+  "name": "novihadis.com",
+  "version": "1.0.0",
+  "description": "Svaki dan nauči novi hadis\r -----------------------------------------------",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=5500 --entry-file=index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armin--nukic/novihadis.com.git"
+  },
+  "author": "Armin Nukic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/armin--nukic/novihadis.com/issues"
+  },
+  "homepage": "https://github.com/armin--nukic/novihadis.com#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
