@@ -1,33 +1,45 @@
-# novihadis.com -- https://novihadis.com/
+# Islamic-quote.com - [https://islamic-quote.com/](https://islamic-quote.com/)
 
-Svaki dan nauči novi hadis
+Showcasing a new Islamic quote every day
 -----------------------------------------------
 
-This code appears to be a JavaScript (Vanilla) code that controls a web page that displays and shares Islamic hadiths. It contains functions that allow the user to generate a random hadith, share it on social media platforms, listen to the hadith using text-to-speech, and copy the hadith to the clipboard.
+This repository contains JavaScript (Vanilla) code that powers a web page displaying and sharing Islamic quotes. The functionality includes generating a random quote, sharing it on social media platforms, listening to the quote using text-to-speech, and copying the quote to the clipboard.
 
-The code uses the fetch() method to retrieve data from an external API that provides a collection of hadiths. The code then selects a random hadith from the data returned by the API and displays it on the web page.
+## Features
 
-The code also includes event listeners that trigger functions when the user clicks on various buttons, such as the "share" button for sharing the hadith on social media platforms, the "zvuk" button for listening to the hadith using text-to-speech, and the "kopiraj" button for copying the hadith to the clipboard.
+- Display random Islamic quotes
+- Share quotes on social media
+- Listen to quotes using text-to-speech
+- Copy quotes to the clipboard
 
-The code also includes functions for sharing the hadith on various social media platforms, including Instagram, Facebook, Twitter, Messenger, and email. These functions use the navigator.share() method to allow the user to share the hadith text and a link to the page.
+## Code Overview
 
+The code utilizes the `fetch()` method to retrieve data from an external API that provides a collection of Islamic quotes. It then selects a random quote from the API response and displays it on the web page.
 
-# API
--------------------------------------------------
+Event listeners are implemented to trigger functions when users interact with buttons, such as the "share," "sound," and "copy to clipboard" buttons.
 
-The MongoDB API service is used to fetch a random hadith from a MongoDB database hosted on AWS (Amazon Web Services). The database contains a collection of hadiths, each with its own "name" and "author" fields. The API endpoint "https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi" is used to retrieve the data from the MongoDB database in JSON format.
+## Social Media Sharing
 
-To add new hadiths to the database, you would need to use the POST method and send a raw JSON object in the body of the request to the same URL "https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadisi". The JSON object should contain the "name" and "author" fields, which will be used to create a new hadith document in the database.
+The code includes functions for sharing quotes on various social media platforms, including Instagram, Facebook, Twitter, Messenger, and email. The `navigator.share()` method is used to enable users to share the quote text and a link to the page.
 
-You can add new hadiths and author of it using Postman, Jmeter or any other Api testing tool using POST method and raw json format like this
+## API Usage
 
-POST https://us-east-1.aws.data.mongodb-api.com/app/application-0-djjur/endpoint/hadis
+### GET Method
 
+The MongoDB API service fetches a random quote from a MongoDB database hosted on AWS. The database contains quotes with "name" and "author" fields. The API endpoint for fetching data is [https://us-east-1.aws.data.mongodb-api.com/app/islamic-quote-api-kuwdp/endpoint/islamicquotes](https://us-east-1.aws.data.mongodb-api.com/app/islamic-quote-api-kuwdp/endpoint/islamicquotes).
+
+### POST Method
+
+To add a new quote to the database, use the POST method and send a raw JSON object in the request body to [https://us-east-1.aws.data.mongodb-api.com/app/islamic-quote-api-kuwdp/endpoint/islamicquote](https://us-east-1.aws.data.mongodb-api.com/app/islamic-quote-api-kuwdp/endpoint/islamicquote). The JSON object should include "name" and "author" fields to create a new quote document in the database.
+
+Example POST request using Postman, Jmeter, or any API testing tool:
+
+```http
+POST https://us-east-1.aws.data.mongodb-api.com/app/islamic-quote-api-kuwdp/endpoint/islamicquote
 {
-"name": "Allah kaže: Covjece, dijeli pa cu i Ja tebi udijeliti!",
-"author": "Buharija i Muslim"
+    "name": "He, who wishes to enter paradise at the best gate, must please his father and mother.",
+    "author": "Prophet Muhammad"
 }
-
 
 # Na našem jeziku
 
