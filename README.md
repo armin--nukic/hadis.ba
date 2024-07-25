@@ -1,6 +1,6 @@
 # novihadis.com -- https://novihadis.com/
 
-Svaki dan nauči novi hadis
+Learn a new hadith every day
 -----------------------------------------------
 
 This code appears to be a JavaScript (Vanilla) code that controls a web page that displays and shares Islamic hadiths. It contains functions that allow the user to generate a random hadith, share it on social media platforms, listen to the hadith using text-to-speech, and copy the hadith to the clipboard.
